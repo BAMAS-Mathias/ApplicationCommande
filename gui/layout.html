@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/assets/css/navbar.css">
     <meta charset="UTF-8">
     <title>%title%</title>
 </head>
 <body>
+    <nav>
+        <div id="logo">
+            <img src="/assets/icons/bag.png" alt="bag logo"/>
+            <a href="/index.php"><h1>RAYAN' COMMANDE</h1></a>
+        </div>
+
+        <ul>
+            <li>
+                <a href="/index.php/commandes/create">Créer une Commande</a>
+            </li>
+            <li>
+                <a href="/index.php/menu/create">Composer un Menu</a>
+            </li>
+            <li>
+                <a href="/index.php/commandes/">Mes Commandes</a>
+            </li>
+        </ul>
+
+        <div id="profile">
+            <p>Rayan BENDJEDDOU</p>
+            <img src="/assets/icons/user.png" alt="profile icon"/>
+        </div>
+    </nav>
     %content%
 </body>
 </html>

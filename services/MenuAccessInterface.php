@@ -9,4 +9,6 @@ interface MenuAccessInterface{
     function deleteMenu($id);
 
     function getMenu($id);
+
+    function getAllMenu();
 }

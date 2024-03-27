@@ -2,6 +2,8 @@
 
 class ApiMenu implements \service\MenuAccessInterface{
 
+    private $apiRootUrl = '';
+
     function createMenu()
     {
         // TODO: Implement createMenu() method.
@@ -15,5 +17,11 @@ class ApiMenu implements \service\MenuAccessInterface{
     function getMenu($id)
     {
         // TODO: Implement getMenu() method.
+    }
+
+    function getAllMenu()
+    {
+        $menuList = array();
+        $menuList[] = new \domain\Menu("");
     }
 }
