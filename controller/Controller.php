@@ -4,7 +4,11 @@ namespace controller;
 
 class Controller{
 
-    function MenusAction($menuAccess, $menuCheck){
+    function menusAction($menuAccess, $menuCheck){
         $menuCheck->getAllMenus($menuAccess);
+    }
+
+    function commandesAction($commandeAccess, $commandeCheck){
+
     }
 }
