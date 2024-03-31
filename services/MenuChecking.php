@@ -1,8 +1,8 @@
 <?php
 
-namespace gui;
+namespace services;
 
-use service\MenuAccessInterface;
+use services\MenuAccessInterface;
 
 class MenuChecking{
 

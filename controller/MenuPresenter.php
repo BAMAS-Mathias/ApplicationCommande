@@ -2,7 +2,7 @@
 
 namespace controller;
 
-class Presenter{
+class MenuPresenter{
 
     protected $menuCheck;
 
@@ -11,7 +11,7 @@ class Presenter{
         $this->menuCheck = $menuCheck;
     }
 
-    function getAllMenusHTML(){
+    public function getAllMenusHTML(){
         $content = null;
         if($this->menuCheck->getMenuTxt() != null){
             $content = '<ul>';

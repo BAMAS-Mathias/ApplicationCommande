@@ -1,6 +1,6 @@
 <?php
 
-namespace service;
+namespace services;
 
 interface CommandeAccessInterface{
 
@@ -9,4 +9,8 @@ interface CommandeAccessInterface{
     function deleteCommande($id);
 
     function createCommande();
+
+    function getAllCommandes();
+
+    function getUserCommandes($userId);
 }

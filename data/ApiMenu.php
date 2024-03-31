@@ -1,9 +1,10 @@
 <?php
 
-include_once 'services/MenuAccessInterface.php';
-include_once 'domain/Menu.php';
+namespace data;
 
-class ApiMenu implements \service\MenuAccessInterface{
+use services\MenuAccessInterface;
+
+class ApiMenu implements MenuAccessInterface {
 
     private $apiRootUrl = '';
 
