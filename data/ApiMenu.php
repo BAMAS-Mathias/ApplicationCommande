@@ -2,6 +2,7 @@
 
 namespace data;
 
+use domain\Menu;
 use services\MenuAccessInterface;
 
 class ApiMenu implements MenuAccessInterface {
@@ -20,7 +21,30 @@ class ApiMenu implements MenuAccessInterface {
 
     function getMenu($id)
     {
-        // TODO: Implement getMenu() method.
+        $apiUrl = "http://localhost:8080/apimenus-1.0-SNAPSHOT/api/menus/get";
+
+        $curlConnection = curl_init();
+
+        $params = array(
+            CURLOPT_URL => $apiUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => array('accept: application/json')
+        );
+        curl_setopt_array($curlConnection, $params);
+        $response = curl_exec($curlConnection);
+        curl_close($curlConnection);
+
+        if(!$response)
+            echo curl_error($curlConnection);
+
+        $response = json_decode($response, true);
+        $menuList = array();
+
+        foreach ($response as $menu){
+            $menuList[] = new Menu($menu['id'], $menu['title'], $menu['description'], $menu['price']);
+        }
+
+        return $menuList;
     }
 
 
@@ -29,10 +53,29 @@ class ApiMenu implements MenuAccessInterface {
      */
     function getAllMenu()
     {
+        $apiUrl = "http://localhost:8080/apimenus-1.0-SNAPSHOT/api/menus";
+
+        $curlConnection = curl_init();
+
+        $params = array(
+            CURLOPT_URL => $apiUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => array('accept: application/json')
+        );
+        curl_setopt_array($curlConnection, $params);
+        $response = curl_exec($curlConnection);
+        curl_close($curlConnection);
+
+        if(!$response)
+            echo curl_error($curlConnection);
+
+        $response = json_decode($response, true);
         $menuList = array();
-        $menuList[] = new \domain\Menu(4, "Menu Rayan", "Un trés bon menu", 15);
-        $menuList[] = new \domain\Menu(15, "Menu Test", "Un trés mauvais menu", 99);
-        $menuList[] = new \domain\Menu(15, "Menu Manager", "Un trés mauvais menu", 99);
+
+        foreach ($response as $menu){
+            $menuList[] = new Menu($menu['id'], $menu['title'], $menu['description'], $menu['price']);
+        }
+
         return $menuList;
     }
 }

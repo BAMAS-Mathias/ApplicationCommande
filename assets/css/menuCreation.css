@@ -1,0 +1,13 @@
+#creation-menu-container{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#liste-plats{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 70vh;
+    background-color: red;
+}

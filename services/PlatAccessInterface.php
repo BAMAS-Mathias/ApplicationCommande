@@ -10,4 +10,6 @@ interface PlatAccessInterface{
 
     function getPlat($id);
 
+    function getAllPlats();
+
 }

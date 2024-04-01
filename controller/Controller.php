@@ -4,6 +4,8 @@ namespace controller;
 
 use services\CommandeAccessInterface;
 use services\CommandeChecking;
+use services\PlatAccessInterface;
+use services\PlatChecking;
 
 class Controller{
 
@@ -19,5 +21,15 @@ class Controller{
      */
     function commandesAction($commandeAccess, $commandeCheck, $userId){
         $commandeCheck->getUserCommandes($commandeAccess, $userId);
+    }
+
+
+    /**
+     * @param PlatAccessInterface $platAccess
+     * @param PlatChecking $platCheck
+     * @return void
+     */
+    function platsAction($platAccess, $platCheck){
+        $platCheck->getAllPlats($platAccess);
     }
 }
